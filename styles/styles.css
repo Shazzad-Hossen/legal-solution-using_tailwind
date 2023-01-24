@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&display=swap');
+
+.title {
+    font-family: 'EB Garamond';
+}
+
+.banner {
+    background-image: url('../images/banner.png'), linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0) 100%);
+    background-blend-mode: multiply;
+
+}
+
+.law-gradient {
+    background: linear-gradient(180deg, #F3F3F3 0%, rgba(243, 243, 243, 0) 100%);
+}
+
+.carousel-open:checked+.carousel-item {
+    position: static;
+    opacity: 100;
+}
+
+.carousel-item {
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+
+#carousel-1:checked~.control-1,
+#carousel-2:checked~.control-2,
+#carousel-3:checked~.control-3 {
+    display: block;
+}
+
+.carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+#carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet {
+    color: #2b6cb0;
+
+}
+
+.tab-content {
+    max-height: 0;
+    -webkit-transition: max-height .35s;
+    -o-transition: max-height .35s;
+    transition: max-height .35s;
+}
+
+.tab input:checked~.tab-content {
+    max-height: 100vh;
+}
+
+.tab input:checked+label {
+    font-size: 1.25rem;
+    padding: 1.25rem;
+
+}
+
+.tab label::after {
+    float: right;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5;
+    font-size: 1.25rem;
+    text-align: center;
+    -webkit-transition: all .35s;
+    -o-transition: all .35s;
+    transition: all .35s;
+}
+
+
+.tab input[type=radio]+label::after {
+    content: "+";
+    font-weight: bold;
+    font-size: 24px;
+
+}
+
+
+.tab input[type=radio]:checked+label::after {
+    content: "-";
+}
+
+.modal-container {
+    background-color: rgb(0, 0, 0);
+    opacity: 0.90;
+    z-index: 500;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.modal-body {
+    z-index: 1000;
+    
+}
